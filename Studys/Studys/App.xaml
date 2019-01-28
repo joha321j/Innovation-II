@@ -1,0 +1,15 @@
+﻿<Application x:Class="Studys.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Studys"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <LinearGradientBrush x:Key="GradientOne" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFAA322C" Offset="0.949"/>
+            <GradientStop Color="#FF002EFF"/>
+            <GradientStop Color="#FFA10CE6" Offset="0.435"/>
+        </LinearGradientBrush>
+
+    </Application.Resources>
+</Application>
