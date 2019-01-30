@@ -59,6 +59,12 @@
       <DependentUpon>CompanyMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Student.cs" />
+    <Compile Include="View\Categories\CategoriesPage.xaml.cs">
+      <DependentUpon>CategoriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Categories\DesignCategory.xaml.cs">
+      <DependentUpon>DesignCategory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CompanyLogin.xaml.cs">
       <DependentUpon>CompanyLogin.xaml</DependentUpon>
     </Compile>
@@ -87,6 +93,14 @@
       <DependentUpon>StudentMainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Categories\CategoriesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Categories\DesignCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CompanyLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

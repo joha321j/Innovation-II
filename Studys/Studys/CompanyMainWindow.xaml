@@ -12,8 +12,8 @@
             <Button x:Name="BtnMinimize" Content="-" Margin="850,14,64,13" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="20" Foreground="#FF9E9494" Click="BtnMinimize_Click" FontWeight="Bold"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="314" Background="#FF2A303A" Margin="0,67,0,275">
-            <Image x:Name="ImageOpretProjekt" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/pencil.png" Margin="48,49,0,0" RenderTransformOrigin="0.611,1.216"/>
-            <Button x:Name="BtnOpretProjekt" HorizontalAlignment="Left" Margin="100,49,0,0" VerticalAlignment="Top" Width="158" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Opret projekt" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
+            <Image x:Name="ImageOpretProjekt" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/pencil.png" Margin="48,29,0,0" RenderTransformOrigin="0.611,1.216"/>
+            <Button x:Name="BtnOpretProjekt" HorizontalAlignment="Left" Margin="93,30,0,0" VerticalAlignment="Top" Width="158" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Opret projekt" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="314" Background="#FF2A303A">
             <Label x:Name="LabelTitle" Content="Studys" Margin="79,0" VerticalAlignment="Top" FontSize="48" Foreground="White" FontFamily="Rockwell" Height="60">

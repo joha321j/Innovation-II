@@ -13,24 +13,32 @@
             <GradientStop Color="#FF790CE6" Offset="0.435"/>
         </LinearGradientBrush>
     </Window.Resources>
-    <Grid>
-        <Grid.Background>
-            <ImageBrush/>
-        </Grid.Background>
+    <Grid Background="#FF2A303A">
         <Grid.Effect>
             <DropShadowEffect/>
         </Grid.Effect>
-        <Image Margin="0,31,0,0" Source="/Studys;component/Images/018 Cloudy Knoxville.png" Stretch="Fill"/>
 
-        <Label x:Name="LabelTitle" Content="Studys" HorizontalAlignment="Center" Margin="81,83,90,0" VerticalAlignment="Top" FontSize="60" Foreground="#FFA2A2A2" FontFamily="Rockwell">
+        <Label x:Name="LabelTitle" Content="Studys" Margin="86,83,85,0" VerticalAlignment="Top" FontSize="60" Foreground="White" FontFamily="Rockwell" Background="{x:Null}">
             <Label.Effect>
                 <DropShadowEffect Direction="280" ShadowDepth="2"/>
             </Label.Effect>
         </Label>
-        <Grid HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="363" Background="#FFD4D6DE">
+        <Grid HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="363" Background="#FF232B36">
             <Button x:Name="BtnClose" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="334,5,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF7E7171" Click="BtnClose_Click" Height="18"/>
             <Button x:Name="BtnMinimize" Content="-"   Width="20" Margin="312,5,31,8" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="16" Foreground="#FF7E7171" Click="BtnMinimize_Click" FontWeight="Bold"/>
         </Grid>
         <Frame Name="LoginFrame" Content="" HorizontalAlignment="Left" Height="356" VerticalAlignment="Top" Width="342" Margin="10,168,0,0" NavigationUIVisibility="Hidden"/>
+        <Grid HorizontalAlignment="Left" Height="9" VerticalAlignment="Top" Width="363" Background="#FF232B36" Margin="0,526,0,0">
+            <Button x:Name="BtnClose1" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="334,5,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF7E7171" Click="BtnClose_Click" Height="18"/>
+            <Button x:Name="BtnMinimize1" Content="-"   Width="20" Margin="312,5,31,8" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="16" Foreground="#FF7E7171" Click="BtnMinimize_Click" FontWeight="Bold"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="495" VerticalAlignment="Top" Width="9" Background="#FF232B36" Margin="354,31,0,0">
+            <Button x:Name="BtnClose2" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="334,5,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF7E7171" Click="BtnClose_Click" Height="18"/>
+            <Button x:Name="BtnMinimize2" Content="-"   Width="20" Margin="312,5,31,8" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="16" Foreground="#FF7E7171" Click="BtnMinimize_Click" FontWeight="Bold"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="494" VerticalAlignment="Top" Width="9" Background="#FF232B36" Margin="0,31,0,0">
+            <Button x:Name="BtnClose3" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="334,5,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF7E7171" Click="BtnClose_Click" Height="18"/>
+            <Button x:Name="BtnMinimize3" Content="-"   Width="20" Margin="312,5,31,8" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="16" Foreground="#FF7E7171" Click="BtnMinimize_Click" FontWeight="Bold"/>
+        </Grid>
     </Grid>
 </Window>

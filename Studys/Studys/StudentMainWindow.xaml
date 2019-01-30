@@ -10,10 +10,15 @@
         <Grid HorizontalAlignment="Left" Width="963" Margin="314,0,0,0" Height="67" VerticalAlignment="Top" Background="White">
             <Button x:Name="BtnClose" Content="X" HorizontalAlignment="Left" Width="49" Margin="904,14,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF9E9494" Click="BtnClose_Click" Height="40" VerticalAlignment="Top"/>
             <Button x:Name="BtnMinimize" Content="-" Margin="850,14,64,13" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="20" Foreground="#FF9E9494" Click="BtnMinimize_Click" FontWeight="Bold"/>
+            <StackPanel x:Name="StackTabs" HorizontalAlignment="Left" Height="21" Margin="7,46,0,0" VerticalAlignment="Top" Width="805" Orientation="Horizontal">
+                <Button x:Name="BtnFrontPage" Content="Forside" Width="75" FontFamily="Rockwell" Background="White" Click="BtnFrontPage_Click"/>
+                <Button Content="Opslag" Width="75" Background="White" Foreground="Black" FontFamily="Rockwell" Visibility="Hidden"/>
+            </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="314" Background="#FF2A303A" Margin="0,67,0,275">
-            <Button x:Name="BtnProjekter" HorizontalAlignment="Left" Margin="106,59,0,0" VerticalAlignment="Top" Width="99" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Projekter" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
-            <Image x:Name="ImageProjekter" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/clipboard.png" Margin="53,59,0,0" RenderTransformOrigin="0.611,1.216"/>
+            <Button x:Name="BtnProjects" HorizontalAlignment="Left" Margin="108,30,0,0" VerticalAlignment="Top" Width="99" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Projekter" Foreground="White" FontSize="22" FontFamily="Rockwell" Click="BtnProjects_Click"/>
+            <Image x:Name="ImageProjekter" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/clipboard.png" Margin="59,29,0,0" RenderTransformOrigin="0.611,1.216"/>
+            <Frame x:Name="CategoriesFrame" Content="" HorizontalAlignment="Left" Height="318" Margin="10,77,0,0" VerticalAlignment="Top" Width="294" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="314" Background="#FF2A303A">
             <Label x:Name="LabelTitle" Content="Studys" Margin="79,0" VerticalAlignment="Top" FontSize="48" Foreground="White" FontFamily="Rockwell" Height="60">
@@ -21,24 +26,137 @@
                     <DropShadowEffect Direction="280" ShadowDepth="2" Color="#FF101055"/>
                 </Label.Effect>
             </Label>
-            <Separator HorizontalAlignment="Left" Height="14" Margin="-2,59,0,-6" VerticalAlignment="Top" Width="316" Background="#FFA69E9E"/>
+            <Separator HorizontalAlignment="Left" Height="14" Margin="-2,60,0,-7" VerticalAlignment="Top" Width="316" Background="#FFA69E9E"/>
             <Separator HorizontalAlignment="Left" Height="14" Margin="0,464,0,-411" VerticalAlignment="Top" Width="314" Background="#FFA69E9E"/>
-            <Separator HorizontalAlignment="Left" Height="14" Margin="314,59,-963,-6" VerticalAlignment="Top" Width="963" Background="#FFA69E9E"/>
+            <Separator HorizontalAlignment="Left" Height="14" Margin="314,60,-963,-7" VerticalAlignment="Top" Width="963" Background="#FFA69E9E"/>
         </Grid>
-        <Frame Content="" HorizontalAlignment="Left" Height="680" Margin="314,67,0,0" VerticalAlignment="Top" Width="963">
-            <Frame.Background>
-                <ImageBrush ImageSource="Images/018 Cloudy Knoxville.png"/>
-            </Frame.Background>
-        </Frame>
         <Grid HorizontalAlignment="Left" Height="275" Margin="0,472,0,0" VerticalAlignment="Top" Width="314" Background="#FF20242C">
             <Image Margin="108,20,109,159" Source="Images/user (2).png" Stretch="Fill"/>
             <Button HorizontalAlignment="Left" Margin="265,10,0,0" VerticalAlignment="Top" Width="39" Background="{x:Null}" BorderBrush="{x:Null}" Height="38">
                 <Image HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="26" Source="Images/settings.png"/>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="98,139,0,0" VerticalAlignment="Top" Width="158" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Mine projekter" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
+            <Button x:Name="BtnMyProjects" HorizontalAlignment="Left" Margin="98,139,0,0" VerticalAlignment="Top" Width="158" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Mine projekter" Foreground="White" FontSize="22" FontFamily="Rockwell" Click="BtnMyProjects_Click"/>
             <Image HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/folder.png" Margin="46,139,0,0" RenderTransformOrigin="0.611,1.216"/>
-            <Button HorizontalAlignment="Left" Margin="94,199,0,0" VerticalAlignment="Top" Width="108" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Beskeder" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
+            <Button x:Name="BtnMessages" HorizontalAlignment="Left" Margin="94,199,0,0" VerticalAlignment="Top" Width="108" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Beskeder" Foreground="White" FontSize="22" FontFamily="Rockwell" Click="BtnMessages_Click"/>
             <Image HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/chat.png" Margin="46,199,0,0" RenderTransformOrigin="0.611,1.216"/>
+        </Grid>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="675" Margin="322,72,0,0" VerticalAlignment="Top" Width="955" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <LineBreak/>
+            <Label Content="Projekter" FontSize="40" Margin="350,0,0,0" />
+            <LineBreak/>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnb" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkæd" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore1" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+                <Label Content="200.-" HorizontalAlignment="Left" Margin="69,89,0,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaas" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Funk ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore2" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjn" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore3" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+                <Label Content="75.-" HorizontalAlignment="Left" Margin="69,89,0,0" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæw" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore4" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblk" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore5" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkæd" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore6" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkædvnasfaasfsadjnblkvnwkæd" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore7" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+            <Label Content="Label"/>
+        </ListBox>
+        <Grid x:Name="GridProjectDescription" HorizontalAlignment="Left" Height="665" Margin="322,72,0,0" VerticalAlignment="Top" Width="945" Background="White" Visibility="Hidden">
+            <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="354,16,0,0" VerticalAlignment="Top" FontSize="48"/>
+            <Label Content="Design" HorizontalAlignment="Left" Margin="440,95,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <Button x:Name="BtnAddProject" Content="Tilføj" HorizontalAlignment="Left" Margin="732,572,0,0" VerticalAlignment="Top" Width="173" Height="63" FontSize="36" FontFamily="Rockwell"/>
+        </Grid>
+        <ListBox x:Name="listBoxMyProjects" HorizontalAlignment="Left" Height="675" Margin="322,72,0,0" VerticalAlignment="Top" Width="955" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <LineBreak/>
+            <Label Content="Mine projekter" FontSize="40" Margin="350,0,0,0" />
+            <LineBreak/>
+            <Grid Height="118" Width="816" Background="WhiteSmoke" Margin="65,0,0,0">
+                <TextBlock HorizontalAlignment="Left" Margin="212,31,0,0" TextWrapping="Wrap" Text="kawpfjpawodjsofjskdajfvioewhnvjkldscnbjoihjvnwipcjveroipvjcaslkcjvldnjciwpdjvblevkædcmækaaækfjqwpojdæaekfjakæsdjfklnfpdakjfpasfawdeslfkjdaklædsjgvlkdcmaslkvbnvlkwdlkbnvkæsdvjblkdlkæbjelkædvjerjmakæjvekpwcjekgjelkæfjlkejblkvdcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnblkvnwkædvndcnvlknvlkæwdjnb" VerticalAlignment="Top" Width="475" Height="84"/>
+                <Label Content="Virksomhed:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="3,7,0,0"/>
+                <Label Content="Kategori: " HorizontalAlignment="Left" Margin="3,27,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Belønning:" HorizontalAlignment="Left" Margin="3,89,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label Content="Design" HorizontalAlignment="Left" Margin="58,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Møller ApS" HorizontalAlignment="Left" Margin="77,7,0,0" VerticalAlignment="Top"/>
+                <Label Content="Introduktion:" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="24" Margin="207,7,0,0"/>
+                <Button x:Name="BtnReadMore8" Content="Læs mere" HorizontalAlignment="Left" Margin="737,80,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="69" Height="29" Click="BtnReadMore_Click"/>
+            </Grid>
+        </ListBox>
+        <Grid x:Name="GridMessages" HorizontalAlignment="Left" Height="665" Margin="322,72,0,0" VerticalAlignment="Top" Width="945" Visibility="Hidden">
+            <Label Content="Beskeder" HorizontalAlignment="Left" Margin="388,0,0,0" VerticalAlignment="Top" Height="69" Width="216" FontSize="48"/>
+            <StackPanel HorizontalAlignment="Left" Height="493" Margin="72,115,0,0" VerticalAlignment="Top" Width="194" Background="#FFF9F9F9">
+                <TextBox Height="23" TextWrapping="Wrap" Text="Søg efter kontakt" TextAlignment="Center"/>
+                <Button Content="UCL" Height="27" HorizontalContentAlignment="Center"/>
+                <Button Content="Funk.io" Height="27" HorizontalContentAlignment="Center"/>
+                <Button Content="Møller ApS" Height="27" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="493" Margin="266,115,0,0" VerticalAlignment="Top" Width="604" Background="#FFEEEDED"/>
         </Grid>
 
     </Grid>
