@@ -1,19 +1,19 @@
-﻿<Window x:Name="mainWindow" x:Class="Studys.View.StudentMainWindow"
+﻿<Window x:Class="Studys.CompanyMainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Studys.View"
+        xmlns:local="clr-namespace:Studys"
         mc:Ignorable="d"
-        Title="StudentMainWindow" Height="746.586" Width="1277.227" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseDown="mainWindow_MouseDown">
+        Title="CompanyMainWindow" Height="746.586" Width="1277.227" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseDown="mainWindow_MouseDown">
     <Grid>
         <Grid HorizontalAlignment="Left" Width="963" Margin="314,0,0,0" Height="67" VerticalAlignment="Top" Background="White">
             <Button x:Name="BtnClose" Content="X" HorizontalAlignment="Left" Width="49" Margin="904,14,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF9E9494" Click="BtnClose_Click" Height="40" VerticalAlignment="Top"/>
             <Button x:Name="BtnMinimize" Content="-" Margin="850,14,64,13" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="20" Foreground="#FF9E9494" Click="BtnMinimize_Click" FontWeight="Bold"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="314" Background="#FF2A303A" Margin="0,67,0,275">
-            <Button x:Name="BtnProjekter" HorizontalAlignment="Left" Margin="106,59,0,0" VerticalAlignment="Top" Width="99" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Projekter" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
-            <Image x:Name="ImageProjekter" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/clipboard.png" Margin="53,59,0,0" RenderTransformOrigin="0.611,1.216"/>
+            <Image x:Name="ImageOpretProjekt" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="48" Source="Images/pencil.png" Margin="48,49,0,0" RenderTransformOrigin="0.611,1.216"/>
+            <Button x:Name="BtnOpretProjekt" HorizontalAlignment="Left" Margin="100,49,0,0" VerticalAlignment="Top" Width="158" Background="{x:Null}" BorderBrush="{x:Null}" Height="34" Content="Opret projekt" Foreground="White" FontSize="22" FontFamily="Rockwell"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="314" Background="#FF2A303A">
             <Label x:Name="LabelTitle" Content="Studys" Margin="79,0" VerticalAlignment="Top" FontSize="48" Foreground="White" FontFamily="Rockwell" Height="60">

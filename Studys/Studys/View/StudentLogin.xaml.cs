@@ -20,21 +20,21 @@ namespace Studys.View
     /// </summary>
     public partial class StudentLoginPage : Page
     {
+        private WindowLogin _windowLogin;
         private StudentMainWindow studentMainWindow;
-        public StudentLoginPage()
+        public StudentLoginPage(WindowLogin windowLogin)
         {
             InitializeComponent();
             studentMainWindow = new StudentMainWindow();
+            _windowLogin = windowLogin;
         }
 
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             // Is student - true (Disable "Opret Projekt"
-            studentMainWindow.Visibility = Visibility.Visible;
-            studentMainWindow.BtnOpretProjekt.Opacity = 1;
-            studentMainWindow.ImageOpretProjekt.Opacity = 0.25;
-            this.Visibility = Visibility.Hidden;
+            studentMainWindow.Show();
+            _windowLogin.Close();
         }
 
         private void TbEmail_GotFocus(object sender, RoutedEventArgs e)

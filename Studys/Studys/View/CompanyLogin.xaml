@@ -10,6 +10,21 @@
 
     <Grid>
         <Image Margin="0,0,0,0" Source="/Studys;component/Images/018 Cloudy Knoxville.png" Stretch="Fill"/>
-        
+        <TextBox x:Name="TbEmail" HorizontalAlignment="Left" Margin="49,121,0,198" TextWrapping="Wrap" Height="37" Width="261" Text="Email" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="#7F535B68" Background="White" FontSize="14" BorderBrush="{x:Null}" GotFocus="TbEmail_GotFocus" LostFocus="TbEmail_LostFocus">
+            <TextBox.Effect>
+                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
+            </TextBox.Effect>
+        </TextBox>
+        <PasswordBox x:Name="TbPassword" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="49,186,0,0" VerticalAlignment="Top" Width="261" Height="37" Foreground="#7F535B68" BorderBrush="{x:Null}" Background="White" GotFocus="TbPassword_GotFocus" LostFocus="TbPassword_LostFocus" Password="Password">
+            <PasswordBox.Effect>
+                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
+            </PasswordBox.Effect>
+        </PasswordBox>
+        <Button x:Name="BtnLogin" Content="Log ind" HorizontalAlignment="Left" Margin="49,242,0,0" VerticalAlignment="Top" Width="261" Background="#FF0962FF" Height="36" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Click="BtnLogin_Click">
+            <Button.Effect>
+                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
+            </Button.Effect>
+        </Button>
+
     </Grid>
 </Page>

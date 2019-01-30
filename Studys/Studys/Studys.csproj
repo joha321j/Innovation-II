@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CompanyMainWindow.xaml.cs">
+      <DependentUpon>CompanyMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Student.cs" />
     <Compile Include="View\CompanyLogin.xaml.cs">
       <DependentUpon>CompanyLogin.xaml</DependentUpon>
@@ -68,6 +71,10 @@
     <Compile Include="View\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
     </Compile>
+    <Page Include="CompanyMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentMainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

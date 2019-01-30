@@ -30,12 +30,12 @@ namespace Studys.View
 
         private void StudButton_OnClick(object sender, RoutedEventArgs e)
         {
-            _windowLogin.LoginFrame.Content = new StudentLoginPage();
+            _windowLogin.LoginFrame.Content = new StudentLoginPage(_windowLogin);
         }
 
         private void CompButton_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            _windowLogin.LoginFrame.Content = new CompanyLogin(_windowLogin);
         }
     }
 }
