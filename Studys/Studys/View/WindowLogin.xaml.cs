@@ -21,34 +21,15 @@ namespace Studys.View
     /// </summary>
     public partial class WindowLogin : Window
     {
-        MainWindow mainWindow;
-
-        public WindowLogin(MainWindow instance)
+        private StartPage startPage;
+        public WindowLogin()
         {
             InitializeComponent();
 
-            mainWindow = instance;
+            startPage = new StartPage(this);
 
+            LoginFrame.Content = startPage;
         }
-
-        
-
-        private void BtnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            // Is student - true (Disable "Opret Projekt"
-            mainWindow.Visibility = Visibility.Visible;
-            mainWindow.BtnOpretProjekt.Opacity = 1;
-            mainWindow.ImageOpretProjekt.Opacity = 0.25;
-            this.Visibility = Visibility.Hidden;
-
-            
-
-
-        }
-
-        
-
-
 
 
         //--- Close / Minimize window
@@ -59,39 +40,6 @@ namespace Studys.View
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
-        }
-
-        //--- Get / Lost focus
-        private void TbEmail_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (TbEmail.Text == "Email")
-            {
-                TbEmail.Text = string.Empty;
-            }
-        }
-
-        private void TbEmail_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (TbEmail.Text == string.Empty)
-            {
-                TbEmail.Text = "Email";
-            }
-        }
-
-        private void TbPassword_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (TbPassword.Password == "Password")
-            {
-                TbPassword.Password = string.Empty;
-            }
-        }
-
-        private void TbPassword_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (TbPassword.Password == string.Empty)
-            {
-                TbPassword.Password = "Password";
-            }
         }
 
         //--- Drag window

@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Studys.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StudentMainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentMainWindow : Window
     {
-        WindowLogin windowLogin;
-
-        public MainWindow()
+        public StudentMainWindow()
         {
             InitializeComponent();
-
-            windowLogin = new WindowLogin(this);
-
-            windowLogin.Show();
-            this.Visibility = Visibility.Hidden;
         }
 
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)

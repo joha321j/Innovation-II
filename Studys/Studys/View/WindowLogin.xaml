@@ -31,32 +31,6 @@
             <Button x:Name="BtnClose" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="334,5,0,0" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="High Tower Text" FontSize="16" Foreground="#FF7E7171" Click="BtnClose_Click" Height="18"/>
             <Button x:Name="BtnMinimize" Content="-"   Width="20" Margin="312,5,31,8" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Global User Interface" FontSize="16" Foreground="#FF7E7171" Click="BtnMinimize_Click" FontWeight="Bold"/>
         </Grid>
-        <TextBox x:Name="TbEmail" HorizontalAlignment="Left" Margin="49,219,0,279" TextWrapping="Wrap" Width="261" Text="Email" TextAlignment="Center" VerticalContentAlignment="Center" Foreground="#7F535B68" Background="White" FontSize="14" BorderBrush="{x:Null}" GotFocus="TbEmail_GotFocus" LostFocus="TbEmail_LostFocus">
-            <TextBox.Effect>
-                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
-            </TextBox.Effect>
-        </TextBox>
-        <PasswordBox x:Name="TbPassword" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="49,270,0,0" VerticalAlignment="Top" Width="261" Height="37" Foreground="#7F535B68" BorderBrush="{x:Null}" Background="White" GotFocus="TbPassword_GotFocus" LostFocus="TbPassword_LostFocus" Password="Password">
-            <PasswordBox.Effect>
-                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
-            </PasswordBox.Effect>
-        </PasswordBox>
-        <Button x:Name="BtnLogin" Content="Log ind" HorizontalAlignment="Left" Margin="49,318,0,0" VerticalAlignment="Top" Width="152" Background="#FF0962FF" Height="36" BorderBrush="{x:Null}" Foreground="White" FontSize="18" Click="BtnLogin_Click">
-            <Button.Effect>
-                <DropShadowEffect Color="#FF7A7070" Direction="280" ShadowDepth="2" BlurRadius="2"/>
-            </Button.Effect>
-        </Button>
-        <Grid HorizontalAlignment="Left" Height="499" VerticalAlignment="Top" Width="4" Background="#FFD4D6DE" Margin="0,31,0,0"/>
-        <Grid HorizontalAlignment="Left" Height="499" VerticalAlignment="Top" Width="5" Background="#FFD4D6DE" Margin="358,31,0,0">
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" Width="363" Background="#FFD4D6DE" Margin="0,530,0,0">
-        </Grid>
-        <Button HorizontalAlignment="Left" Margin="206,318,0,0" VerticalAlignment="Top" Width="104" Height="36" BorderBrush="{x:Null}" Background="White">
-            <Button.Effect>
-                <DropShadowEffect Direction="280" ShadowDepth="2" BlurRadius="2"/>
-            </Button.Effect>
-            <Image Source="/Studys;component/Images/WayfLogo.PNG" Stretch="Fill" Height="32" Width="100"/>
-        </Button>
-
+        <Frame Name="LoginFrame" Content="" HorizontalAlignment="Left" Height="356" VerticalAlignment="Top" Width="342" Margin="10,168,0,0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

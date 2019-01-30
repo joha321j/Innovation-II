@@ -1,0 +1,16 @@
+﻿<Page x:Class="Studys.View.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studys.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="356" d:DesignWidth="342"
+      Title="StartPage">
+
+    <Grid>
+        <Image Margin="0,0,0,0" Source="/Studys;component/Images/018 Cloudy Knoxville.png" Stretch="Fill"/>
+        <Button Name="StudButton" Content="Studerende" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="50,147,0,0" Height="40" Click="StudButton_OnClick" />
+        <Button Name="CompButton" Content="Virksomhed" HorizontalAlignment="Left" VerticalAlignment="Top" Width="261" Margin="50,239,0,0" Height="40" Click="CompButton_OnClick"/>
+    </Grid>
+</Page>
